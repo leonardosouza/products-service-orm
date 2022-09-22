@@ -1,10 +1,11 @@
 // Importando Modulos
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const { PORT } = require("dotenv").config().parsed;
 
 // Ativando Middlewares
-app.use(express.json());
+app.use(express.json(), cors());
 
 // Rotas
 const productsRouter = require("../routes/productsRouter");
